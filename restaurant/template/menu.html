@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Paradise - Menu</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+/* Navbar */
+
+nav{
+    background:#111;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:#ff9800;
+    font-size:30px;
+    font-weight:bold;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+}
+
+nav ul li a:hover{
+    color:#ff9800;
+}
+
+/* Slider */
+
+.slider{
+    width:100%;
+    height:450px;
+    overflow:hidden;
+}
+
+.slides{
+    display:flex;
+    width:500%;
+    height:450px;
+    animation:slide 20s infinite;
+}
+
+.slides img{
+    width:20%;
+    object-fit:cover;
+}
+
+@keyframes slide{
+
+0%,20%{
+margin-left:0;
+}
+
+25%,45%{
+margin-left:-100%;
+}
+
+50%,70%{
+margin-left:-200%;
+}
+
+75%,95%{
+margin-left:-300%;
+}
+
+100%{
+margin-left:-400%;
+}
+}
+
+/* Heading */
+
+.heading{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.heading h1{
+    font-size:42px;
+    color:#222;
+}
+
+.heading p{
+    color:gray;
+    margin-top:10px;
+}
+
+/* Menu */
+
+.menu{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    padding-bottom:60px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.content{
+    padding:20px;
+}
+
+.content h3{
+    margin-bottom:10px;
+}
+
+.content p{
+    color:#666;
+    margin-bottom:15px;
+}
+
+.price{
+    color:#e91e63;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 20px;
+    background:#ff9800;
+    color:white;
+    text-decoration:none;
+    border-radius:25px;
+}
+
+.btn:hover{
+    background:#e68900;
+}
+
+/* Footer */
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="logo">Food Paradise</div>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="menu.html">Menu</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<!-- Slider -->
+
+<div class="slider">
+<div class="slides">
+
+<img src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg" alt="">
+<img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg" alt="">
+<img src="https://images.pexels.com/photos/2233729/pexels-photo-2233729.jpeg" alt="">
+<img src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg" alt="">
+<img src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg" alt="">
+
+</div>
+</div>
+
+<div class="heading">
+<h1>Our Delicious Menu</h1>
+<p>Fresh Food, Great Taste & Best Quality</p>
+</div>
+
+<div class="menu">
+
+<!-- Pizza -->
+
+<div class="card">
+<img src="https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg">
+<div class="content">
+<h3>Margherita Pizza</h3>
+<p>Fresh cheese pizza with toppings.</p>
+<div class="price">₹299</div>
+<a href="#" class="btn">Order Now</a>
+</div>
+</div>
+
+<!-- Burger -->
+
+<div class="card">
+<img src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg">
+<div class="content">
+<h3>Burger Combo</h3>
+<p>Juicy burger with fries.</p>
+<div class="price">₹249</div>
+<a href="#" class="btn">Order Now</a>
+</div>
+</div>
+
+<!-- Chicken Biryani -->
+
+<div class="card">
+<img src="https://images.pexels.com/photos/12737656/pexels-photo-12737656.jpeg">
+<div class="content">
+<h3>Chicken Biryani</h3>
+<p>Authentic Hyderabadi Chicken Biryani.</p>
+<div class="price">₹399</div>
+<a href="#" class="btn">Order Now</a>
+</div>
+</div>
+
+<!-- Paneer -->
+
+<div class="card">
+<img src="https://images.pexels.com/photos/7625056/pexels-photo-7625056.jpeg">
+<div class="content">
+<h3>Paneer Butter Masala</h3>
+<p>Rich creamy paneer curry.</p>
+<div class="price">₹279</div>
+<a href="#" class="btn">Order Now</a>
+</div>
+</div>
+
+<!-- Dosa -->
+
+<div class="card">
+<img src="https://images.pexels.com/photos/5560763/pexels-photo-5560763.jpeg">
+<div class="content">
+<h3>Masala Dosa</h3>
+<p>South Indian crispy dosa.</p>
+<div class="price">₹149</div>
+<a href="#" class="btn">Order Now</a>
+</div>
+</div>
+
+<!-- Pasta -->
+
+<div class="card">
+<img src="https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg">
+<div class="content">
+<h3>White Sauce Pasta</h3>
+<p>Creamy Italian style pasta.</p>
+<div class="price">₹229</div>
+<a href="#" class="btn">Order Now</a>
+</div>
+</div>
+
+<!-- Noodles -->
+
+<div class="card">
+<img src="https://images.pexels.com/photos/2347311/pexels-photo-2347311.jpeg">
+<div class="content">
+<h3>Hakka Noodles</h3>
+<p>Spicy Chinese noodles.</p>
+<div class="price">₹189</div>
+<a href="#" class="btn">Order Now</a>
+</div>
+</div>
+
+<!-- Coffee -->
+
+<div class="card">
+<img src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg">
+<div class="content">
+<h3>Cold Coffee</h3>
+<p>Refreshing chilled coffee.</p>
+<div class="price">₹129</div>
+<a href="#" class="btn">Order Now</a>
+</div>
+</div>
+
+<!-- Ice Cream -->
+
+<div class="card">
+<img src="https://images.pexels.com/photos/1352278/pexels-photo-1352278.jpeg">
+<div class="content">
+<h3>Chocolate Ice Cream</h3>
+<p>Premium chocolate dessert.</p>
+<div class="price">₹99</div>
+<a href="#" class="btn">Order Now</a>
+</div>
+</div>
+
+</div>
+
+<footer>
+© 2026 Food Paradise Restaurant | All Rights Reserved
+</footer>
+
+</body>
+</html>

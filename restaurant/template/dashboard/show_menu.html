@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static%}
+    {% comment %} {% load my_filters %} {% endcomment %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+            margin: 0 5px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>sr. no</th>
+                <th>NAME</th>
+                <th>Message</th>
+                <th>email-id</th>
+            </tr>
+        </thead>
+        <tbody>
+              {% for r_data in data %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{r_data.name}}</td>
+                <td>{{r_data.message}}</td>
+                <td>{{r_data.email}}</td>
+                </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3">No Data Available.</td>
+            </tr>
+            {% endfor %}
+                
+        </tbody>
+    </table>
+</body>
+</html>

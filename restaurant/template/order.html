@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Food</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg');
+    background-size:cover;
+    background-position:center;
+    min-height:100vh;
+}
+
+.container{
+    width:90%;
+    max-width:700px;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+h1{
+    text-align:center;
+    color:#ff6600;
+    margin-bottom:25px;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+textarea{
+    resize:none;
+}
+
+button{
+    width:100%;
+    margin-top:20px;
+    padding:14px;
+    border:none;
+    background:#ff6600;
+    color:white;
+    font-size:18px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#e65c00;
+}
+
+#result{
+    margin-top:25px;
+    padding:15px;
+    background:#f4f4f4;
+    border-radius:8px;
+    display:none;
+}
+
+.price{
+    color:green;
+    font-size:22px;
+    font-weight:bold;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>🍽 Food Order Form</h1>
+
+<form id="orderForm">
+
+<label>Customer Name</label>
+<input type="text" id="name" required>
+
+<label>Mobile Number</label>
+<input type="tel" id="mobile" required>
+
+<label>Delivery Address</label>
+<textarea id="address" rows="4" required></textarea>
+
+<label>Select Dish</label>
+<select id="dish">
+<option value="299">Margherita Pizza - ₹299</option>
+<option value="249">Burger Combo - ₹249</option>
+<option value="399">Chicken Biryani - ₹399</option>
+<option value="279">Paneer Butter Masala - ₹279</option>
+<option value="149">Masala Dosa - ₹149</option>
+<option value="229">White Sauce Pasta - ₹229</option>
+<option value="189">Hakka Noodles - ₹189</option>
+<option value="129">Cold Coffee - ₹129</option>
+<option value="99">Chocolate Ice Cream - ₹99</option>
+</select>
+
+<label>Quantity</label>
+<input type="number" id="qty" min="1" value="1">
+
+<button type="button" onclick="calculateBill()">
+Place Order
+</button>
+
+</form>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+
+function calculateBill(){
+
+let name=document.getElementById("name").value;
+let mobile=document.getElementById("mobile").value;
+let address=document.getElementById("address").value;
+
+let dish=document.getElementById("dish");
+let dishName=dish.options[dish.selectedIndex].text;
+
+let price=parseInt(dish.value);
+let qty=parseInt(document.getElementById("qty").value);
+
+let total=price*qty;
+
+document.getElementById("result").style.display="block";
+
+document.getElementById("result").innerHTML=
+`
+<h2>✅ Order Confirmed</h2>
+<p><b>Name:</b> ${name}</p>
+<p><b>Mobile:</b> ${mobile}</p>
+<p><b>Address:</b> ${address}</p>
+<p><b>Item:</b> ${dishName}</p>
+<p><b>Quantity:</b> ${qty}</p>
+<p class="price">Total Bill: ₹${total}</p>
+`;
+
+}
+</script>
+
+</body>
+</html>
